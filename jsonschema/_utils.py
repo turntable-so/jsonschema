@@ -1,5 +1,6 @@
 import itertools
 import json
+import os
 import pkgutil
 import re
 
@@ -51,9 +52,8 @@ def load_schema(name):
     Load a schema from ./schemas/``name``.json and return it.
     """
 
-    data = pkgutil.get_data("jsonschema", "schemas/{0}.json".format(name))
-    return json.loads(data.decode("utf-8"))
-
+    with open(os.path.join(os.path.dirname(__file__),"schemas", f"{name}.json"), 'rb') as f:
+        return json.loads(f.read().decode("utf-8"))
 
 def indent(string, times=1):
     """
