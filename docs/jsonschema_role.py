@@ -12,7 +12,7 @@ import certifi
 from lxml import html
 
 
-__version__ = "1.0.0"
+__version__ = "3.2.0"
 VALIDATION_SPEC = "https://json-schema.org/draft-07/json-schema-validation.html"
 
 
